@@ -9,7 +9,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 # Flags
 # TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 # TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-# COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60
+COMMON_GLOBAL_CFLAGS += -DVENDOR_EDIT
 
 # Architecture
 TARGET_ARCH := arm
@@ -27,10 +27,10 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x00000100 --dt device/oppo/A31/dt.img
 
 # prebuilt kernel
-TARGET_PREBUILT_KERNEL := device/oppo/A31/kernel
+# TARGET_PREBUILT_KERNEL := device/oppo/A31/kernel
 # else uncomment below to build from sauce
-# TARGET_KERNEL_SOURCE := kernel/oppo/A31
-# TARGET_KERNEL_CONFIG := msm8916_defconfig
+TARGET_KERNEL_SOURCE := kernel/oppo/A31
+TARGET_KERNEL_CONFIG := msm8916_15005_defconfig
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
@@ -46,7 +46,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # USE_OPENGL_RENDERER := true
 # TARGET_USES_OVERLAY := true
 # BOARD_KERNEL_SEPARATED_DT := true
-TW_NEW_ION_HEAP := true
+# TW_NEW_ION_HEAP := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
